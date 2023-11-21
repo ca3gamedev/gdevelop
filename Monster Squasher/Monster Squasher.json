@@ -1421,6 +1421,12 @@
       "name": "BestScore",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "AdStart",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [
@@ -4178,6 +4184,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Enemies",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6589,10 +6596,12 @@
             },
             {
               "type": {
-                "inverted": true,
-                "value": "AdMob::BannerConfigured"
+                "value": "GlobalVariableAsBoolean"
               },
-              "parameters": []
+              "parameters": [
+                "AdStart",
+                "False"
+              ]
             }
           ],
           "actions": [
@@ -6605,34 +6614,21 @@
                 "",
                 "yes"
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ]
             },
-            {
-              "type": {
-                "inverted": true,
-                "value": "AdMob::BannerShowing"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
             {
               "type": {
                 "value": "AdMob::ShowBanner"
               },
               "parameters": []
+            },
+            {
+              "type": {
+                "value": "SetGlobalVariableAsBoolean"
+              },
+              "parameters": [
+                "AdStart",
+                "True"
+              ]
             }
           ]
         },
