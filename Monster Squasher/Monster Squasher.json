@@ -6680,14 +6680,6 @@
                 "",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "AdMob::SetTestMode"
-              },
-              "parameters": [
-                "yes"
-              ]
             }
           ]
         },
